@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import org.apache.pulsar.client.api.*;
 import org.apache.pulsar.client.impl.MultiplierRedeliveryBackoff;
 import org.apache.pulsar.client.impl.conf.ConsumerConfigurationData;
+import org.apache.pulsar.client.impl.schema.AvroSchema;
 import org.eclipse.microprofile.reactive.messaging.Message;
 
 import io.opentelemetry.api.GlobalOpenTelemetry;
@@ -112,7 +113,7 @@ public class PulsarIncomingChannel<T> {
                     .until(m -> closed.get())
                     .plug(msgMulti -> {
                         // Calling getValue on the pulsar-client-internal thread to make sure the SchemaInfo is fetched
-                        if (schema.requireFetchingSchemaInfo()) {
+                        if (schema instanceof AvroSchema || schema.requireFetchingSchemaInfo()) {
                             return msgMulti.onItem().invoke(org.apache.pulsar.client.api.Message::getValue);
                         } else {
                             return msgMulti;
@@ -136,7 +137,7 @@ public class PulsarIncomingChannel<T> {
                     .filter(m -> m.size() > 0)
                     .plug(msgMulti -> {
                         // Calling getValue on the pulsar-client-internal thread to make sure the SchemaInfo is fetched
-                        if (schema.requireFetchingSchemaInfo()) {
+                        if (schema instanceof AvroSchema || schema.requireFetchingSchemaInfo()) {
                             return msgMulti.onItem().invoke(msg -> msg.forEach(org.apache.pulsar.client.api.Message::getValue));
                         } else {
                             return msgMulti;

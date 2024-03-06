@@ -48,13 +48,47 @@
     <url>https://github.com/smallrye/smallrye-reactive-messaging/issues</url>
   </issueManagement>
 
-  <scm>
-    <connection>scm:git:git@github.com:smallrye/smallrye-reactive-messaging.git</connection>
-    <developerConnection>scm:git:git@github.com:smallrye/smallrye-reactive-messaging.git</developerConnection>
-    <url>https://github.com/smallrye/smallrye-reactive-messaging</url>
-    <tag>HEAD</tag>
-  </scm>
+  <build>
+    <extensions>
+      <extension>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <version>2.2.1</version>
+      </extension>
+    </extensions>
+    <plugins>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <scmCommentPrefix>[no ci] [maven-release-plugin]</scmCommentPrefix>
+          <tagNameFormat>@{project.version}</tagNameFormat>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.0.1</version>
+      </plugin>
+    </plugins>
+  </build>
 
+  <distributionManagement>
+    <repository>
+      <id>streamx-maven-releases</id>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-releases
+      </url>
+    </repository>
+    <snapshotRepository>
+      <id>streamx-maven-snapshots</id>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-snapshots
+      </url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <scm>
+    <connection>scm:git:git@github.com:streamx-dev/smallrye-reactive-messaging.git</connection>
+    <developerConnection>scm:git:git@github.com:streamx-dev/smallrye-reactive-messaging.git
+    </developerConnection>
+    <tag>HEAD</tag>
+    <url>https://github.com/streamx-dev/smallrye-reactive-messaging.git</url>
+  </scm>
 
   <properties>
     <maven.compiler.release>11</maven.compiler.release>
