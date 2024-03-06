@@ -35,4 +35,4 @@ jobs:
           distribution: 'adopt'
 
       - name: Release
-        run: ./mvnw -B release:prepare release:perform
+        run: mvn -B release:prepare release:perform
