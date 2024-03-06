@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -16,7 +17,8 @@
 
   <name>SmallRye Reactive Messaging</name>
 
-  <description>An implementation of the MicroProfile Reactive Streams Messaging specification</description>
+  <description>An implementation of the MicroProfile Reactive Streams Messaging specification
+  </description>
   <url>https://smallrye.io</url>
 
   <inceptionYear>2018</inceptionYear>
@@ -47,27 +49,6 @@
     <system>GitHub</system>
     <url>https://github.com/smallrye/smallrye-reactive-messaging/issues</url>
   </issueManagement>
-
-  <build>
-    <extensions>
-      <extension>
-        <artifactId>artifactregistry-maven-wagon</artifactId>
-        <groupId>com.google.cloud.artifactregistry</groupId>
-        <version>2.2.1</version>
-      </extension>
-    </extensions>
-    <plugins>
-      <plugin>
-        <artifactId>maven-release-plugin</artifactId>
-        <configuration>
-          <scmCommentPrefix>[no ci] [maven-release-plugin]</scmCommentPrefix>
-          <tagNameFormat>@{project.version}</tagNameFormat>
-        </configuration>
-        <groupId>org.apache.maven.plugins</groupId>
-        <version>3.0.1</version>
-      </plugin>
-    </plugins>
-  </build>
 
   <distributionManagement>
     <repository>
@@ -133,7 +114,8 @@
 
     <testcontainers.version>1.19.6</testcontainers.version>
 
-    <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco.xml
+    </sonar.coverage.jacoco.xmlReportPaths>
     <mockito.version>5.11.0</mockito.version>
     <junit-pioneer.version>2.2.0</junit-pioneer.version>
     <junit-platform-commons.version>1.9.3</junit-platform-commons.version>
@@ -623,6 +605,15 @@
 
     <plugins>
       <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <configuration>
+          <scmCommentPrefix>[no ci] [maven-release-plugin]</scmCommentPrefix>
+          <tagNameFormat>@{project.version}</tagNameFormat>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.0.1</version>
+      </plugin>
+      <plugin>
         <groupId>io.smallrye</groupId>
         <artifactId>jandex-maven-plugin</artifactId>
       </plugin>
@@ -654,7 +645,8 @@
                 <bom>
                   <artifactId>smallrye-reactive-messaging-bom</artifactId>
                   <name>Smallrye Reactive Messaging: BOM</name>
-                  <description>Centralized dependencyManagement for the SmallRye Reactive Messaging Project
+                  <description>Centralized dependencyManagement for the SmallRye Reactive Messaging
+                    Project
                   </description>
                   <properties>
                     <skipStagingRepositoryClose>true</skipStagingRepositoryClose>
@@ -701,6 +693,14 @@
         </configuration>
       </plugin>
     </plugins>
+    <extensions>
+      <extension>
+        <artifactId>artifactregistry-maven-wagon</artifactId>
+        <groupId>com.google.cloud.artifactregistry</groupId>
+        <version>2.2.1</version>
+      </extension>
+    </extensions>
+
   </build>
 
   <repositories>
