@@ -11,7 +11,7 @@
 
   <groupId>io.smallrye.reactive</groupId>
   <artifactId>smallrye-reactive-messaging</artifactId>
-  <version>4.18.0-SNAPSHOT</version>
+  <version>4.19.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>SmallRye Reactive Messaging</name>
@@ -107,7 +107,7 @@
     <microprofile-metrics-api.version>4.0.1</microprofile-metrics-api.version>
     <microprofile-health-api.version>4.0</microprofile-health-api.version>
 
-    <smallrye-config.version>3.5.4</smallrye-config.version>
+    <smallrye-config.version>3.6.0</smallrye-config.version>
     <smallrye-metrics.version>4.0.0</smallrye-metrics.version>
     <smallrye-common.version>2.3.0</smallrye-common.version>
     <smallrye-health.version>4.1.0</smallrye-health.version>
@@ -134,7 +134,7 @@
     <testcontainers.version>1.19.6</testcontainers.version>
 
     <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/target/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <mockito.version>5.10.0</mockito.version>
+    <mockito.version>5.11.0</mockito.version>
     <junit-pioneer.version>2.2.0</junit-pioneer.version>
     <junit-platform-commons.version>1.9.3</junit-platform-commons.version>
     <system-stubs-jupiter.version>2.1.6</system-stubs-jupiter.version>
