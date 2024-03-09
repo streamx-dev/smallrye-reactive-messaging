@@ -11,7 +11,7 @@
 
   <groupId>io.smallrye.reactive</groupId>
   <artifactId>smallrye-reactive-messaging</artifactId>
-  <version>4.18.0-streamx-trace-hotfix</version>
+  <version>4.18.0-streamx-trace-hotfix-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>SmallRye Reactive Messaging</name>
