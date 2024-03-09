@@ -11,7 +11,7 @@
 
   <groupId>io.smallrye.reactive</groupId>
   <artifactId>smallrye-reactive-messaging</artifactId>
-  <version>4.18.0-streamx-trace-hotfix-SNAPSHOT</version>
+  <version>4.18.0-streamx-trace-hotfix</version>
   <packaging>pom</packaging>
 
   <name>SmallRye Reactive Messaging</name>
@@ -51,12 +51,12 @@
   <distributionManagement>
     <repository>
       <id>streamx-maven-releases</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-releases
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-maven-public-releases/streamx-maven-releases
       </url>
     </repository>
     <snapshotRepository>
       <id>streamx-maven-snapshots</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-snapshots
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-maven-public-releases/streamx-maven-snapshots
       </url>
     </snapshotRepository>
   </distributionManagement>
