@@ -50,15 +50,9 @@
 
   <distributionManagement>
     <repository>
-      <id>streamx-maven-releases</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-maven-public-releases/streamx-maven-releases
-      </url>
+      <id>artifact-registry</id>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-public-releases</url>
     </repository>
-    <snapshotRepository>
-      <id>streamx-maven-snapshots</id>
-      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-maven-public-releases/streamx-maven-snapshots
-      </url>
-    </snapshotRepository>
   </distributionManagement>
 
   <scm>
@@ -724,6 +718,16 @@
       </releases>
       <snapshots>
         <enabled>true</enabled>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>artifact-registry</id>
+      <url>artifactregistry://europe-west1-maven.pkg.dev/streamx-releases/streamx-maven-public-releases</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
